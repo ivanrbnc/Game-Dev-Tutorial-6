@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/Fonts/new_dynamicfont80.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/Return.gd" type="Script" id=3]
+
+[node name="ColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.52549, 0.180392, 0.180392, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -308.0
+margin_top = -70.0
+margin_right = 308.0
+margin_bottom = 70.0
+
+[node name="Game Over" type="Label" parent="VBoxContainer"]
+margin_right = 616.0
+margin_bottom = 122.0
+custom_fonts/font = ExtResource( 1 )
+text = "GAME OVER"
+
+[node name="Return" type="LinkButton" parent="VBoxContainer"]
+margin_top = 126.0
+margin_right = 616.0
+margin_bottom = 161.0
+custom_fonts/font = ExtResource( 2 )
+text = "BACK TO MAIN MENU"
+script = ExtResource( 3 )
+
+[connection signal="pressed" from="VBoxContainer/Return" to="VBoxContainer/Return" method="_on_Return_pressed"]

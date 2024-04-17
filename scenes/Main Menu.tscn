@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/Fonts/new_dynamicfont80.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" type="Texture" id=3]
+[ext_resource path="res://NewGame.gd" type="Script" id=4]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 977.0
+margin_bottom = 520.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 341.0
+margin_bottom = 440.0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_right = 341.0
+margin_bottom = 247.0
+custom_fonts/font = ExtResource( 1 )
+text = "ALIEN
+ALIEN"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 251.0
+margin_right = 341.0
+margin_bottom = 440.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="NewGame" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 57.0
+margin_right = 341.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 2 )
+text = "NEW GAME"
+script = ExtResource( 4 )
+scene_to_load = "Level 1"
+
+[node name="StageSelection" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 341.0
+margin_bottom = 131.0
+custom_fonts/font = ExtResource( 2 )
+text = "STAGE SELECT"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 345.0
+margin_right = 857.0
+margin_bottom = 440.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer"]
+margin_top = 92.0
+margin_right = 512.0
+margin_bottom = 348.0
+texture = ExtResource( 3 )
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_NewGame_pressed"]
